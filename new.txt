@@ -1,0 +1,863 @@
+sudo keytool -import -alias ale-intermed -file /opt/ALE-INTERNATIONAL-FRDRTCWPKI02P.cer -storetype JKS -keystore /usr/lib/jvm/java-21-openjdk-amd64/lib/security/cacerts -storepass changeit
+
+sudo keytool -import -alias ale-root -file /opt/ALE-INTERNATIONAL-ROOT.cer -storetype JKS -keystore /usr/lib/jvm/java-21-openjdk-amd64/lib/security/cacerts -storepass changeit
+
+sudo apt install git
+git config --global user.email "cicd-bot@al-enterprise.com"
+git config --global user.name "cicd-bot"
+sudo apt install java
+sudo apt install openjdk-21-jdk openjdk-21-jre
+
+"sudo apt-get purge openjdk-\*"  for remove old versions of java
+
+sudo apt install openjdk-21-jdk openjdk-21-jre
+
+sudo keytool -import -alias ale-intermed -file /opt/ALE-INTERNATIONAL-FRDRTCWPKI02P.cer -storetype JKS -keystore /usr/lib/jvm/java-21-openjdk-amd64/lib/security/cacerts -storepass changeit
+
+sudo keytool -import -alias ale-root -file /opt/ALE-INTERNATIONAL-ROOT.cer -storetype JKS -keystore /usr/lib/jvm/java-21-openjdk-amd64/lib/security/cacerts -storepass changeit
+
+
+then we need to reluch agen in jenkins
+ 
+wget https://dlcdn.apache.org/maven/maven-3/3.9.6/binaries/apache-maven-3.9.6-bin.tar.gz
+tar xvf apache-maven-3.9.6-bin.tar.gz
+
+nano ~/.bashrc
+export M2_HOME=/home/ngov/apache-maven-3.9.6/
+export PATH=$PATH:/home/ngov/apache-maven-3.9.6/bin
+
+export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
+export PATH=$PATH:/usr/lib/jvm/java-21-openjdk-amd64/bin
+
+10.4.3_fontenay_daily_build_updated.groovy
+10.4.3_fontenay_pt_build_helm.groovy
+updateBuildTagFontenay.groovy
+
+source ~/.bashrc
+
+sudo apt install nodejs
+sudo apt install npm
+
+sudo apt install openssh-server
+sudo apt install lvm2
+
+sudo dpkg-reconfigure ca-certificates
+sudo update-ca-certificates
+
+sudo apt install docker
+sudo apt install docker-compose
+sudo apt install curl
+
+cd /etc/docker
+nano daemon.json
+sudo vi daemon.json
+
+{
+  "insecure-registries": [
+  "10.95.163.32:8082",
+  "10.95.163.32:8083",
+  "frbrevdockerregistry.voice.ale-international.com:8200",
+  "registry.access.redhat.com",
+  "repo.myovcloud.com"
+  ]
+}
+
+
+
+
+{
+"insecure-registries": [
+"135.254.163.211:8082",
+"135.254.163.211:8083",
+"frbrevdockerregistry.voice.ale-international.com:8200",
+"Nexus Repository Manager "
+]
+}
+
+docker ls
+docker images
+cd
+docker daemon restart
+cd /etc/docker
+docker daemon restart
+docker status
+sudo service docker start
+sudo docker run hello-world
+docker info
+
+sudo systemctl enable docker.service –now
+
+cd
+sudo systemctl enable docker.service –now
+systemctl status docker
+sudo systemctl daemon-reload
+sudo systemctl restart docker
+docker images
+Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/images/json": dial unix /var/run/docker.sock: connect: permission denied
+sudo chmod 666 /var/run/docker.sock
+docker images
+docker image ps
+docker images ls
+ls
+mv /home/ngov/kubectl-oidc_login /usr/local/bin
+udo mv /home/ngov/kubectl-oidc_login /usr/local/bin
+cd /usr/local/bin
+ls
+cd
+
+cd ~/.kube
+sudo vi /etc/fstab
+sudo swapoff -a
+sudo vi /etc/sysctl.conf
+
+$ sudo sysctl -p
+net.ipv4.ip_forward = 1
+$
+
+sudo sysctl -p
+sudo apt install -y apt-transport-https curl
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add
+sudo apt-add-repository "deb http://apt.kubernetes.io/ kubernetes-xenial main"
+sudo apt update
+sudo apt install -y kubelet kubeadm kubectl
+
+
+sudo kubeadm init
+sudo vi /etc/docker/daemon.json
+sudo systemctl daemon-reload
+sudo systemctl restart docker
+sudo systemctl restart kubelet
+
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+cd ~/.kube
+   ls
+  cd
+  ls
+nano config
+kubectl get pods
+ls
+nano config-sqa-preview
+cp config-sqa-preview config
+kubectl get pods
+ls
+rm config
+rm config-sqa-preview
+nano config
+kubectl get pods
+cd
+cd /usr/local/bin
+ls
+cat kubectl-oidc_login
+ls
+kubectl get pods
+
+
+
+
+git config -l
+git config --global user.email "cicd-bot@al-enterprise.com"
+git config --global user.name "cicd-bot"
+git config --global -l
+
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add
+
+Git lab SSH 
+Ssh keys for gitlab cicd-bot user stored in location - /home/ngov/.ssh. ssh files are id_rsa_build, id_rsa_build.pub.  Public key added in gitlab sshkeys.
+
+
+Install Helm:
+sudo snap install helm
+curl https://baltocdn.com/helm/signing.asc | sudo apt-key add -
+sudo apt-get install apt-transport-https --yes
+echo "deb https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list
+sudo apt-get update
+sudo apt-get install helm
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+cd NGOV
+ls
+  621  trivy --version
+  622  sudo apt-get install trivy
+  623  sudo apt install trivy
+  624  wget https://github.com/aquasecurity/trivy/releases/download/v0.17.2/trivy_0.17.2_Linux-64bit.deb
+  625  sudo dpkg -i trivy_0.17.2_Linux-64bit.deb
+  626  trivy --version
+  627  sudo apt-get install trivy
+  628  sudo apt-get update
+  629  trivy --version
+  630  wget https://github.com/aquasecurity/trivy/releases/download/v0.33.0/trivy_0.33.0_Linux-64bit.deb
+  631  sudo dpkg -i trivy_0.33.0_Linux-64bit.deb
+  632  trivy --version
+  633  sudo apt-get install trivy
+  634  trivy --version
+  635  cd NGOV
+  636  cd /home
+  637  cd ngov
+  638  cd NGOV
+  639  ls
+  640  sudo apt-get remove trivy_0.17.2_Linux-64bit.deb
+  641  rm trivy_0.17.2_Linux-64bit.deb
+  642  ls
+  643  rm trivy_0.33.0_Linux-64bit.deb
+  644  ls
+  645  cd workspace
+  646  ls
+  647  cd ..
+  648  sudo apt-get install wget apt-transport-https gnupg lsb-release
+  649  wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | sudo apt-key add -
+  650  echo deb https://aquasecurity.github.io/trivy-repo/deb $(lsb_release -sc) main | sudo tee -a /etc/apt/sourcesivy.list
+  651  sudo apt-get update
+  652  sudo apt-get install trivy
+  653  trivy --version
+  654  sudo apt-get remove trivy
+  655  trivy --version
+  656  ls
+  657  sudo apt-get install wget apt-transport-https gnupg lsb-release
+  658  wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | gpg --dearmor | sudo tee /usr/share/keyy.gpg > /dev/null
+  659  echo "deb [signed-by=/usr/share/keyrings/trivy.gpg] https://aquasecurity.github.io/trivy-repo/deb $(lsb_releain" | sudo tee -a /etc/apt/sources.list.d/trivy.list
+  660  sudo apt-get update
+  661  sudo apt-get install trivy
+  662  trivy --version
+  663  sudo apt-get remove trivy
+  664  trivy --version
+  665  trivy version
+  666  sudo apt install trivy
+  667  trivy --version
+  668  sudo apt install trivy-db
+  669  trivy --version
+  670  ls
+  671  cd /home/ngov
+  672  ls
+  673  cd tools
+  674  ls
+  675  cd
+  676  sudo apt-get install trivy
+  677  trivy --version
+  678  cd /home/ngov/NGOV
+  679  cd /home
+  680  ls
+  681  cd ngov
+  682  ls
+  683  sudo apt-uninstall trivy
+  684  sudo apt-get uninstall trivy
+  685  sudo apt-get un-install trivy
+  686  ls
+  687  cd Downloads
+  688  ls
+  689  cdcaches
+  690  ls
+  691  cd cache
+  692  cd caches
+  693  cd
+  694  cd caches
+  695  ls
+  696  cd
+  697  ls -lah
+  698  cd workspace
+  699  ls
+  700  cd
+  701  cd /home/ngov
+  702  mkdir NGOV
+  703  ls
+  704  sudo apt-get remove trivy
+  705  trivy --v
+  706  trivy --version
+  707  history
+  708  cd /home/ngov/Ngov
+  709  LS
+  710  cd /home/ngov/NGOV/Trivy
+  711  hisotry
+  712  history
+  713  sudo apt-get install trivy
+  714  trivy --version
+
+
+
+
+ngov@ngov-virtual-machine:~$ history
+    1  sudo apt upgrade
+    2  sudo apt install openssh-server
+    3  cd /usr/local/bin
+    4  ls
+    5  cd
+    6  cat /etc/hosts
+    7  ls
+    8  cd /usr/local/bin
+    9  ls
+   10  kubectl oidc_login
+   11  ls -larth /usr/local/bin/kubectl-oidc_login
+   12  chmod +x kubectl-oidc_login
+   13  ls -larth /usr/local/bin/kubectl-oidc_login
+   14  ls
+   15  kubectl get pods
+   16  kubectl get pods -n ovng
+   17  cd
+   18  docker push frbrevdockerregistry.voice.ale-international.com:8200/ovng-iot:10.3.007.1
+   19  docker pull frbrevdockerregistry.voice.ale-international.com:8200/ovng-iot:10.3.007.1
+   20  docker pull frbrevdockerregistry.voice.ale-international.com:8200/ovng/ovng-iot:10.3.007.1
+   21  kubectl describe pod/ovng-upam-0
+   22  kubectl describe pod/ovng-upam-0 -n ovng
+   23  docker pull repo.myovcloud.com:5000/ovng/ovng-portal-web:10.3.3
+   24  docker login -u ronan -p 8ZA5tHGVm https://repo.myovcloud.com:5000
+   25  docker pull repo.myovcloud.com:5000/ovng/ovng-portal-web:10.3.3
+   26  docker push repo.myovcloud.com:5000/ovng/ovng-portal-web:10.3.3
+   27  docker images
+   28  ls
+   29  sudo apt install git
+   30  sudo apt install java
+   31  sudo apt install maven
+   32  git --version
+   33  java --version
+   34  mvn --version
+   35  sudo apt install nodejs
+   36  sudo apt install npm
+   37  sudo apt install openssh-server
+   38  sudo apt install lvm2
+   39  sudo dpkg-reconfigure ca-certificates
+   40  sudo update-ca-certificates
+   41  a.sudo apt install docker
+   42  .sudo apt install docker
+   43  sudo apt install docker
+   44  b.sudo apt install docker-compose
+   45  sudo apt install docker-compose
+   46  sudo apt install curl
+   47  cat /etc/docker/daemon.json
+   48  cd /etc/docker
+   49  ls
+   50  nano daemon.json
+   51  sudo vi daemon.json
+   52  docker --version
+   53  docker ls
+   54  docker images
+   55  cd
+   56  docker daemon restart
+   57  cd /etc/docker
+   58  docker daemon restart
+   59  docker status
+   60  sudo service docker start
+   61  sudo docker run hello-world
+   62  docker info
+   63  sudo systemctl enable docker.service –now
+   64  cd
+   65  sudo systemctl enable docker.service –now
+   66  systemctl status docker
+   67  sudo systemctl daemon-reload
+   68  sudo systemctl restart docker
+   69  docker images
+   70  Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/images/json": dial unix /var/run/docker.sock: connect: permission denied
+   71  sudo chmod 666 /var/run/docker.sock
+   72  docker images
+   73  docker image ps
+   74  docker images ls
+   75  ls
+   76  mv /home/ngov/kubectl-oidc_login /usr/local/bin
+   77  sudo mv /home/ngov/kubectl-oidc_login /usr/local/bin
+   78  cd /usr/local/bin
+   79  ls
+   80  cd
+   81  cd ~/.kube
+   82  sudo vi /etc/fstab
+   83  sudo swapoff -a
+   84  sudo vi /etc/sysctl.conf
+   85  sudo sysctl -p
+   86  sudo apt install -y apt-transport-https curl
+   87  curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add
+   88  sudo apt-add-repository "deb http://apt.kubernetes.io/ kubernetes-xenial main"
+   89  sudo apt update
+   90  sudo apt install -y kubelet kubeadm kubectl
+   91  sudo kubeadm init
+   92  sudo vi /etc/docker/daemon.json
+   93  sudo systemctl daemon-reload
+   94  sudo systemctl restart docker
+   95  sudo systemctl restart kubelet
+   96  mkdir -p $HOME/.kube
+   97  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+   98  cd ~/.kube
+   99  ls
+  100  cd
+  101  kubectl get pods
+  102  cd ~/.kube
+  103  ls
+  104  nano config
+  105  kubectl get pods
+  106  ls
+  107  nano config-sqa-preview
+  108  cp config-sqa-preview config
+  109  kubectl get pods
+  110  ls
+  111  rm config
+  112  rm config-sqa-preview
+  113  nano config
+  114  kubectl get pods
+  115  cd
+  116  cd /usr/local/bin
+  117  ls
+  118  cat kubectl-oidc_login
+  119  ls
+  120  kubectl get pods
+  121  echo $JAVA_HOME
+  122  echo $PATH
+  123  jvm --version
+  124  java --version
+  125  cd /bin
+  126  ls
+  127  cd
+  128  cd /usr/lib
+  129  ls
+  130  cd jvm
+  131  ls
+  132  cd ..
+  133  l
+  134  cd jvm
+  135  ls
+  136  cd
+  137  apt install openjdk-17-jdk openjdk-17-jre
+  138  sudo apt install openjdk-17-jdk openjdk-17-jre
+  139  cd /usr/lib/jvm
+  140  ls
+  141  java --version
+  142  echo $JAVA_HOME
+  143  export JAVA_HOME=/usr/lib/jvm/jdk-17/
+  144  export PATH=$PATH:$JAVA_HOME/bin
+  145  nano /etc/environment
+  146  sudo vi  /etc/environment
+  147  source /etc/environment
+  148  echo $JAVA_HOME
+  149  java -version
+  150  echo $MAVEN_HOME
+  151  mvn --version
+  152  wget https://www-us.apache.org/dist/maven/maven-3/3.8.6/binaries/apache-maven-3.8.6-bin.tar.gz -P /tmp
+  153  sudo wget https://www-us.apache.org/dist/maven/maven-3/3.8.6/binaries/apache-maven-3.8.6-bin.tar.gz -P /tmp
+  154  wget http://apache.mirrors.timporter.net/maven/maven-3/3.8.6/binaries/apache-maven-3.8.6-bin.tar.gz
+  155  mvn --version
+  156  maven --version
+  157  sudo apt install maven
+  158  mvn --version
+  159  export JAVA_HOME="/usr/lib/jvm/java-17-openjdk-amd64/"
+  160  export PATH=$PATH:$JAVA_HOME/bin
+  161  echo $ JAVA_HOME
+  162  echo $JAVA_HOME
+  163  mvn --version
+  164  sudo vi  /etc/environment
+  165  source /etc/environment
+  166  mvn --version
+  167  java --version
+  168  javac --version
+  169  ls
+  170  sudo mv apache-maven-3.8.6 /opt/
+  171  ls
+  172  sudo chown -R $USER:$USER /opt/apache-maven-3.8.6
+  173  ls
+  174  nano ~/.bashrc
+  175  echo $JAVA_HOME
+  176  nano ~/.bashrc
+  177  .~/.bashrc
+  178  . ~/.bashrc
+  179  mvn --version
+  180  echp $MAVEN_HOME
+  181  echo $MAVEN_HOME
+  182  mvn -v
+  183  sudo vi /etc/environment
+  184  source /etc/environemnt
+  185  source /etc/environment
+  186  mvn -v
+  187  mvn --version
+  188  mvn clean package
+  189  export MAVEN_HOME=/opt/maven
+  190  mvn --version
+  191  export M2_HOME=/opt/maven
+  192  export MAVEN_HOME=/opt/maven
+  193  export PATH=$M2_HOME/bin:$PATH
+  194  source /etc/profile.d/maven.sh
+  195  export MAVEN_HOME=/opt/maven
+  196  export PATH=$PATH:$MAVEN_HOME/bin
+  197  mvn --version
+  198  maven --version
+  199  mvn --v
+  200  echo $M2_HOME
+  201  cat mvn --version
+  202  cat ~/.bashrc
+  203  echo 'export M2_HOME=/opt/apache-maven-3.8.6' >> ~/.bashrc
+  204  mvn --version
+  205  echo $M2_HOME
+  206  echo 'export M2_HOME=/opt/apache-maven-3.8.6' >> ~/.bashrc
+  207  echo 'export PATH=${M2_HOME}/bin:${PATH}' >> ~/.bashrc
+  208  export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+  209  mvn --version
+  210  wget https://www-us.apache.org/dist/maven/maven-3/3.8.6/binaries/apache-maven-3.8.6-bin.tar.gz -P /tmp
+  211  export MAVEN_HOME=/opt/maven
+  212  export PATH=$PATH:$MAVEN_HOME/bin
+  213  mvn --version
+  214  cd /usr/share/maven
+  215  ls
+  216  cd /bin
+  217  ls
+  218  cd ..
+  219  ls
+  220  echo $MAVEN_HOME
+  221  cd /opt/maven
+  222  cd
+  223  cd /opt/maven
+  224  cd /opt
+  225  ls
+  226  cdc
+  227  cd
+  228  cd /etc/environment
+  229  cd /etc
+  230  nano enviroment
+  231  n
+  232  ls
+  233  cat environment
+  234  export MAVEN_HOME="opt/apache-maven-3.8.6"
+  235  mvn --version
+  236  export M2_HOME="opt/apache-maven-3.8.6"
+  237  mvn --version
+  238  sudo gedit /etc/profile
+  239  cd
+  240  sudo gedit /etc/profile
+  241  cd /etc
+  242  ls
+  243  cat profile
+  244  cat profile.d
+  245  cd profile.d
+  246  ls
+  247  cd
+  248  sudo gedit /etc/profile
+  249  cd /etc
+  250  ls
+  251  sudo vi profile
+  252  cd
+  253  cd /usr/local/bin
+  254  ls
+  255  cd ..
+  256  ls
+  257  cd
+  258  cd ~/.bashrc
+  259  cd .bashrc
+  260  cat ~/.bashrc
+  261  cd /etc
+  262  caat environment
+  263  cat environment
+  264  cd
+  265  export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+  266  export M2_HOME=/opt/maven
+  267  export MAVEN_HOME=/opt/maven
+  268  export PATH=$M2_HOME/bin:$PATH
+  269  source /etc/profile.d/maven.sh
+  270  mvn --version
+  271  cd /usr/share
+  272  ls
+  273  cd maven
+  274  ls
+  275  cd lib
+  276  ls
+  277  cd ..
+  278  ls
+  279  cd
+  280  wget https://www-us.apache.org/dist/maven/maven-3/3.8.6/binaries/apache-maven-3.8.6-bin.tar.gz
+  281  wget wget https://mirrors.estointernet.in/apache/maven/maven-3/3.8.5/source/apache-maven-3.8.5-src.tar.gz
+  282  tar xvf apache-maven-3.8.5-src.tar.gz -C /opt/
+  283  sudo ln -s /home/ngov/opt/apache-maven-3.8.5 /usr/bin/mvn
+  284  M2_HOME=/usr/share/maven
+  285  M2_HOME="opt/apache-maven-3.8.5"
+  286  mvn --version
+  287  ls
+  288  unzip apache-maven-3.8.6-bin.zip
+  289  tar xzvf apache-maven-3.8.6-bin.tar.gz
+  290  mvn --v
+  291  cd /etc
+  292  ls
+  293  sudo vi enviroment
+  294  sudo vi environment
+  295  cd /etc
+  296  sudo vi enviroment
+  297  sudo vi environment
+  298  export PATH=/opt/apache-maven-3.8.6/bin:$PATH
+  299  cd
+  300  export PATH=/opt/apache-maven-3.8.6/bin:$PATH
+  301  mvn --v
+  302  echo $JAVA_HOME
+  303  cd /opt
+  304  ls
+  305  cd apache-maven-3.8.6
+  306  cd
+  307  ls
+  308  cd apache-maven-3.8.6-bin.tar
+  309  cd
+  310  ls
+  311  ls -lah
+  312  cd opt
+  313  ls
+  314  cd/opt
+  315  cd /opt
+  316  ls
+  317  rm apache-maven-3.8.6
+  318  rm -rf apache-maven-3.8.6
+  319  sudo rm -rf apache-maven-3.8.6
+  320  cd
+  321  mv apache-maven-3.8.6 /opt
+  322  sudo mv apache-maven-3.8.6 /opt
+  323  ls
+  324  cd /opt
+  325  s
+  326  ls
+  327  mvn --version
+  328  java --version
+  329  mvn --v
+  330  mvn --version
+  331  ls -larth /opt/apache-maven-3.8.6
+  332  echo $PATH
+  333  cat ~/.bash_profile
+  334  sudo vi ~/.bashrc
+  335  ls
+  336  kubectl get pods
+  337  export PATH="$PATH:$HOME/bin"
+  338  source ~/.bashrc
+  339  ls
+  340  echo @apth
+  341  echo $PATH
+  342  export PATH=/usr/bin:/bin
+  343  LS
+  344  ls
+  345  mvn --version
+  346  echo $path
+  347  echo $PATH
+  348  ls
+  349  export PATH=/usr/bin:/bin
+  350  nano ~/.bashrc
+  351  ls
+  352  JAVA_HOME
+  353  mvn -v
+  354  nano ~/.bashrc
+  355  export PATH=/usr/bin:/bin
+  356  nano ~/.bashrc
+  357  mvn --v
+  358  jvm --v
+  359  java --v
+  360  java --version
+  361  ls
+  362  kubectl get pods
+  363  cd ~/.kube
+  364  ls
+  365  cd
+  366  ls -larth /usr/local/bin/kubectl-oidc_login
+  367  chmod +x  /usr/local/bin/kubectl-oidc_login
+  368  ls -larth /usr/local/bin/kubectl-oidc_login
+  369  chmod +X  /usr/local/bin/kubectl-oidc_login
+  370  ls -larth /usr/local/bin/kubectl-oidc_login
+  371  kubectl oidc-login
+  372  docker images
+  373  cd /opt
+  374  ls
+  375  cd
+  376  cd /usr/local/bin
+  377  ls
+  378  ls -larth kubectl-oidc_login
+  379  chmod +X kubectl-oidc_login
+  380  ls -larth kubectl-oidc_login
+  381  kubectl oidc-login
+  382  ls
+  383  rm -rf kubectl-oidc_login
+  384  sudo rm -rf kubectl-oidc_login
+  385  cd
+  386  ls
+  387  sudo mv kubectl-oidc_login /usr/local/bin
+  388  cd /usr/local/bin
+  389  ls
+  390  ls -larth /usr/local/bin/kubectl-oidc_login
+  391  chmod +x kubectl-oidc_login
+  392  ls -larth /usr/local/bin/kubectl-oidc_login
+  393  kubectl oidc-login
+  394  kubectl oidc_login
+  395  kubectl-oidc_login
+  396  cd
+  397  cd ~/.kube
+  398  ls
+  399  cat config
+  400  kubectl get pods
+  401  echo $PATH
+  402  echo $JAVA_HOME
+  403  export PATH="/home/ngov/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
+  404  kubectl get pods
+  405  mvn --version
+  406  java --version
+  407  nano ~/.bashrc
+  408  kubectl get pods
+  409  nano ~/.bashrc
+  410  ls
+  411  kubectl get pods
+  412  cd /etc
+  413  ls
+  414  sudo vi environment
+  415  source environemnt
+  416  source environment
+  417  kubectl get pods
+  418  mvn --version
+  419  history
+  420  mvn -u
+  421  mvn -U
+  422  sudo apt-get update maven
+  423  sudo apt-get update mvn
+  424  sudo apt-get --only-upgrade install maven
+  425  mvn --version
+  426  ls
+  427  mvn --version
+  428  cd ~/.profile
+  429  mvn release:update-versions
+  430  history
+  431  cd usr//local
+  432  ls
+  433  pwd
+  434  cd apache-maven-3.8.6-bin.tar
+  435  pwd
+  436  cd
+  437  history
+  438  cd /usr/lib/jvm
+  439  ls
+  440  cd
+  441  ls
+  442  cd apache-maven-3.8.6-bin.tar
+  443  ls
+  444  cd
+  445  ls
+  446  rf -rm apache-maven-3.8.6-bin.tar
+  447  rm -rf apache-maven-3.8.6-bin.tar
+  448  ls
+  449  tar -xvf apache-maven-3.8.6-bin.tar.gz
+  450  ls
+  451  cd apache-maven-3.8.6
+  452  ls
+  453  cd apache-maven-3.8.6
+  454  cd bin
+  455  pws
+  456  pwd
+  457  vi etc/profile
+  458  vi /etc/profile
+  459  nano /etc/profile
+  460  vi /etc/profile
+  461  mvn --version
+  462  export M2_HOME=/home/ngov/apache-maven-3.8.6/
+  463  export PATH=$PATH:/home/ngov/apache-maven-3.8.6/bin
+  464  mvn --version
+  465  cd
+  466  nano ~/.bashrc
+  467  $ source ~/.bashrc
+  468  export M2_HOME=/home/ngov/apache-maven-3.8.6/
+  469  export PATH=$PATH:/home/ngov/apache-maven-3.8.6/bin
+  470  mvn --version
+  471  sudo apt mvnremove
+  472  sudo apt mvn remove
+  473  udo apt-get remove maven
+  474  sudo apt-get remove maven
+  475  mvn --version
+  476  $ nano ~/.bashrc
+  477  nano ~/.bashrc
+  478  source ~/.bashrc
+  479  mvn --version
+  480  java --version
+  481  mvn --version
+  482  sudo nano /etc/profile.d/maven.sh
+  483  sudo chmod +x /etc/profile.d/maven.sh
+  484  source /etc/profile.d/maven.sh
+  485  mvn --version
+  486  wget https://dlcdn.apache.org/maven/maven-3/3.8.4/binaries/apache-maven-3.8.4-bin.tar.gz -P /tmp
+  487  sudo tar xf /tmp/apache-maven-*.tar.gz -C /opt
+  488  mvn --v
+  489  ls
+  490  cd /opt
+  491  ls
+  492  java --version
+  493  mvn --version
+  494  nano ~/.bashrc
+  495  source ~/.bashrc
+  496  mvn --version
+  497  cd /usr/lib/jvm
+  498  ls
+  499  java-17-openjdk-amd64
+  500  cd java-17-openjdk-amd64
+  501  ls
+  502  ls -lah
+  503  ping 135.254.163.225
+  504  mvn --v
+  505  ping 135.254.163.196
+  506  ping sonar.ale-international.com/sonar
+  507  ping https://sonar.ale-international.com/sonar
+  508  mvn --version
+  509  history
+  510  git config --global -l
+  511  git config --global
+  512  git config
+  513  git config --local
+  514  git config --list --global
+  515  git config -l
+  516  ls
+  517  git --version
+  518  cd workspace
+  519  ls
+  520  cd Vincennes_auto_daily_build_new
+  521  ls
+  522  cd
+  523  git config --global user.email "cicd-bot@al-enterprise.com"
+  524  git config --global user.name "cicd-bot"
+  525  git config --global -l
+  526  curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add
+  527  history
+  528  cd /usr/lib/jvm
+  529  ls
+  530  java --version
+  531  cd java-17-openjdk-amd64
+  532  ls
+  533  cd ..
+  534  cd openjdk-17
+  535  ls
+  536  cd ..
+  537  cd java-1.17.0-openjdk-amd64
+  538  ls
+  539  cd
+  540  mvn --v
+  541  cd
+  542  cd ~/.kube
+  543  ls
+  544  cat config
+  545  cd
+  546  history
+ngov@ngov-virtual-machine:~$
+
+
